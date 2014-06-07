@@ -1,9 +1,5 @@
 class VotesController < ApplicationController
 	def create
-		p' ! ! ! ! ! !'
-		p params
-		p '! ! ! ! ! ! ! !! ! !'
-
 		permitted_voter = params.require(:vote).permit(:email, :name)
 
 		voter=Voter.find_by(email: params[:vote][:email])
