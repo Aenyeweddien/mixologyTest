@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  voter_id: MyString
+  drink_id: MyString
+  vote_value: MyString
+  comment: MyText
+
+two:
+  voter_id: MyString
+  drink_id: MyString
+  vote_value: MyString
+  comment: MyText

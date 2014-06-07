@@ -1,0 +1,42 @@
+<h1><%=@drink.name%></h1>
+<p><%=@drink.recipe%></p>
+
+<br/><br/>
+<h2>Vote!</h2>
+<%= form_for [@drink, @vote] do |f| %>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+ <br/>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <br/>
+    <div>
+    <%= f.label :vote_value %>
+    <%= f.text_field :vote_value %>
+  </div> 
+  <br/>
+  <div>
+  	<%= f.label :comment %>
+  	<%= f.text_area :comment %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<% if @vote.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@vote.errors.count, "error") %> 
+    	prohibited this vote from being saved:</h2>
+    <ul>
+    <% @vote.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+ <% end %>

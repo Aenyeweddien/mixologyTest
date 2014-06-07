@@ -1,0 +1,14 @@
+<h1>Mixology recipes page</h1>
+
+<h2>Drink recipes</h2>
+<table>
+	<% @drinks.each do |drink| %>
+  <tr>
+    <td><%= link_to(drink.name, drink_path(drink)) %></td>
+    <td><%= link_to 'Destroy', drink_path(drink), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  	<% end %>
+</table> 
+
+<h2>Add new drink</h2>
+<%= link_to("New drink", new_drink_path()) %>
